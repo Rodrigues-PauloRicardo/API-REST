@@ -1,11 +1,19 @@
+//CRIAR PASTA SRC NA PASTA RAIZ
+// npm init -y   para criar package.json
+// npm install express --save
+//npm install dodemon -D     --- PARA ATUALIZAÇÃO AUTOMÁTICA
+// Acrescentar no package.jason no script    "dev": "nodemon src/app.js",
+// npm run dev utilizar no lugar do node src/app.js (iniciar Arquivo)
 
-import express from 'express'
+import express from 'express'     // importar express
+const app = express()             // criar uma instancia express
 
-const app = express()
 
-//criar rota padrão
-app.get('/', (req, res) => {
-    res.send('hello word!!!')
+app.get('/', (req, res) => {        //criar rota padrão   
+//res.send('hello word!!!')
+res.render('home')
+//C:\Users\rober\Documents\GitHubProjClonados\API-REST\index.html
+   
 })
 
 const selecoes =[
@@ -19,6 +27,10 @@ app.get('/selecoes', (req, res) => {
     res.status(200).send(selecoes)
 })
 
+
+app.post('/selecoes', (req, res) => {
+    res.status(201).selecoes.push()
+})
 
 
 export default app
